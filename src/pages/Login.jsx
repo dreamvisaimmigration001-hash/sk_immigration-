@@ -1,8 +1,14 @@
-import React, { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { name } = useParams();
+  const navigate = useNavigate();
+  
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     document.body.classList.add("loaded");
@@ -10,6 +16,36 @@ const Login = () => {
       document.body.classList.remove("loaded");
     };
   }, []);
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
+
+    try {
+      const response = await fetch('https://api-immigration.vercel.app/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('role', data.user.role);
+        navigate('/dashboard');
+      } else {
+        setError(data.message || 'Login failed');
+      }
+    } catch (err) {
+      setError('An error occurred during login. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
@@ -71,13 +107,13 @@ const Login = () => {
             }}
           >
             <h1 className="logoSection">
-              <a href={`https://appointment.blsslovakiavisa.com/${name}/list-appointment-form-india`}>
+              <Link to="/">
                 <img
                   src="/assets/appointment/images/bls-logo.png"
                   alt="BLS Logo"
                   title="BLS Logo"
                 />
-              </a>
+              </Link>
             </h1>
 
             <div className="menuIcon">
@@ -95,7 +131,7 @@ const Login = () => {
             >
               <select 
                 value={name} 
-                onChange={(e) => window.location.href = `/${e.target.value}/login`}
+                onChange={(e) => navigate(`/${e.target.value}/login`)}
                 style={{ padding: '5px', borderRadius: '4px' }}
               >
                 <option value="app_india">India</option>
@@ -119,19 +155,7 @@ const Login = () => {
           </div>
 
           <nav className="navigationPanel">
-            <a
-              href={`https://appointment.blsslovakiavisa.com/${name}/book-appointment-form`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Fill your appointment form
-            </a>
-            <a href={`https://appointment.blsslovakiavisa.com/${name}/appointment-print`}>
-              Reprint Appointment Letter
-            </a>
-            <a href={`https://appointment.blsslovakiavisa.com/${name}/appointment-cancel`}>
-              Cancel Appointment
-            </a>
+            <Link to="/">Back to Home</Link>
           </nav>
         </div>
       </header>
@@ -151,7 +175,7 @@ const Login = () => {
                 Sign in to your account
               </h1>
               <p style={{ textAlign: "center" }}>
-                Please enter your email and password to log in.
+                Please enter your username and password to log in.
               </p>
 
               <div
@@ -170,25 +194,17 @@ const Login = () => {
                 </div>
 
                 <div className="auth-content">
+                  {error && <div style={{ color: '#ffcccc', backgroundColor: '#cc0000', padding: '10px', borderRadius: '4px', marginBottom: '15px', textAlign: 'center' }}>{error}</div>}
                   <form
-                    action={`https://appointment.blsslovakiavisa.com/${name}/login`}
+                    onSubmit={handleLogin}
                     id="thisForm"
                     name="thisForm"
-                    encType="multipart/form-data"
-                    method="post"
-                    acceptCharset="utf-8"
                     noValidate
                   >
-                    <input
-                      type="hidden"
-                      name="csrf_test_name"
-                      value="190b1406d1c8375bea075156204728a7"
-                    />
-
                     <div className="col-sm-12 container">
                       <div className="row">
                         <div className="col-sm-4 label">
-                          Email Address{" "}
+                          Username/Email{" "}
                           <span style={{ color: "#F00", float: "none" }}>
                             *
                           </span>
@@ -196,13 +212,15 @@ const Login = () => {
                         <div className="col-sm-6">
                           <input
                             autoComplete="off"
-                            type="email"
+                            type="text"
                             className="form-control"
                             name="email"
                             id="email"
-                            placeholder="Valid email address"
+                            placeholder="Valid username or email"
                             required
                             aria-required="true"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
                           />
                         </div>
                       </div>
@@ -224,6 +242,8 @@ const Login = () => {
                             placeholder="Valid Password"
                             required
                             aria-required="true"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                           />
                         </div>
                       </div>
@@ -236,33 +256,14 @@ const Login = () => {
                             name="action"
                             className="btn btn-block btn-primary"
                             value="valContinue"
+                            disabled={loading}
                           >
-                            Login
+                            {loading ? 'Logging in...' : 'Login'}
                           </button>
                         </div>
                       </div>
                     </div>
                   </form>
-
-                  <div className="form-group" style={{ float: "right" }}>
-                    <a
-                      href={`https://appointment.blsslovakiavisa.com/${name}/registration`}
-                      className="btn btn-block btn-primary"
-                    >
-                      Registration
-                    </a>
-                  </div>
-                  <div
-                    className="form-group"
-                    style={{ float: "right", marginRight: "2%" }}
-                  >
-                    <a
-                      href={`https://appointment.blsslovakiavisa.com/${name}/forgot`}
-                      className="btn btn-block btn-primary"
-                    >
-                      Forgot
-                    </a>
-                  </div>
                 </div>
               </div>
             </div>
