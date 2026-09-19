@@ -1,0 +1,284 @@
+import React, { useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+
+const Login = () => {
+  const { name } = useParams();
+
+  useEffect(() => {
+    document.body.classList.add("loaded");
+    return () => {
+      document.body.classList.remove("loaded");
+    };
+  }, []);
+
+  return (
+    <>
+      {/* Dynamic CSS for the Login page ONLY */}
+      <link
+        href="/assets/appointment/css/style.css"
+        type="text/css"
+        rel="stylesheet"
+      />
+      <link
+        href="/assets/appointment/css/mobile-responsive.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <link
+        href="/assets/appointment/css/flexdropdown.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <link
+        href="/assets/appointment/css/app.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <link
+        href="/assets/appointment/css/app-orange.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <link
+        href="/assets/appointment/css/datepicker.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+
+      <header
+        className="row headerSection pull_left"
+        style={{ width: "99.5%" }}
+      >
+        <div
+          className="row paddingInBoxExtra white"
+          style={{
+            background: "rgba(0,0,0,0.8)",
+            position: "fixed",
+            bottom: "0px",
+          }}
+          id="popup"
+        >
+          <div className="wrap"></div>
+        </div>
+
+        <div className="wrap">
+          <div
+            className="row borderBottom"
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <h1 className="logoSection">
+              <a href={`https://appointment.blsslovakiavisa.com/${name}/list-appointment-form-india`}>
+                <img
+                  src="/assets/appointment/images/bls-logo.png"
+                  alt="BLS Logo"
+                  title="BLS Logo"
+                />
+              </a>
+            </h1>
+
+            <div className="menuIcon">
+              <img
+                src="/assets/appointment/images/mobicon.png"
+                width="20"
+                height="20"
+                alt="Menu"
+              />
+            </div>
+
+            <div
+              className="paddingInBox paddingRightNone paddingBottomNone mobilebody"
+              style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: "15px" }}
+            >
+              <select 
+                value={name} 
+                onChange={(e) => window.location.href = `/${e.target.value}/login`}
+                style={{ padding: '5px', borderRadius: '4px' }}
+              >
+                <option value="app_india">India</option>
+                <option value="app_china">China</option>
+                <option value="app_russia">Russia</option>
+                <option value="app_uae">UAE</option>
+              </select>
+              
+              <div className="padding-sm paddingRightNone paddingTopNone">
+                <h3 className="baseColor label" style={{ margin: 0 }}>
+                  <img
+                    src="/assets/appointment/images/flag.png"
+                    style={{ height: "41px", width: "80px", display: "block" }}
+                    className="borderAll"
+                    alt="Flag"
+                  />
+                </h3>
+                <div className="marginLeft paddingLeft lineheightExtra languges"></div>
+              </div>
+            </div>
+          </div>
+
+          <nav className="navigationPanel">
+            <a
+              href={`https://appointment.blsslovakiavisa.com/${name}/book-appointment-form`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Fill your appointment form
+            </a>
+            <a href={`https://appointment.blsslovakiavisa.com/${name}/appointment-print`}>
+              Reprint Appointment Letter
+            </a>
+            <a href={`https://appointment.blsslovakiavisa.com/${name}/appointment-cancel`}>
+              Cancel Appointment
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      <div className="row innerbodypanel">
+        <section className="row aboutUsPanel">
+          <div className="wrap">
+            <div
+              className="col-sm-8 container"
+              id="slideup_div"
+              style={{ float: "none", margin: "0 auto" }}
+            >
+              <h1
+                className="row fontweightNone alignCenter black marginBottom"
+                style={{ textAlign: "center" }}
+              >
+                Sign in to your account
+              </h1>
+              <p style={{ textAlign: "center" }}>
+                Please enter your email and password to log in.
+              </p>
+
+              <div
+                className="col-sm-8 container blueBG paddingInBoxExtra roundCornerExtra white"
+                style={{ float: "none", margin: "0 auto" }}
+              >
+                <div className="row font11 paddingBottom marginBottom">
+                  <div>
+                    Fields marked with{" "}
+                    <span style={{ color: "#F00", float: "none" }}>*</span> are
+                    mandatory.
+                  </div>
+                  <div className="pull_right">
+                    Kindly fill this form in english only
+                  </div>
+                </div>
+
+                <div className="auth-content">
+                  <form
+                    action={`https://appointment.blsslovakiavisa.com/${name}/login`}
+                    id="thisForm"
+                    name="thisForm"
+                    encType="multipart/form-data"
+                    method="post"
+                    acceptCharset="utf-8"
+                    noValidate
+                  >
+                    <input
+                      type="hidden"
+                      name="csrf_test_name"
+                      value="190b1406d1c8375bea075156204728a7"
+                    />
+
+                    <div className="col-sm-12 container">
+                      <div className="row">
+                        <div className="col-sm-4 label">
+                          Email Address{" "}
+                          <span style={{ color: "#F00", float: "none" }}>
+                            *
+                          </span>
+                        </div>
+                        <div className="col-sm-6">
+                          <input
+                            autoComplete="off"
+                            type="email"
+                            className="form-control"
+                            name="email"
+                            id="email"
+                            placeholder="Valid email address"
+                            required
+                            aria-required="true"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="row">
+                        <div className="col-sm-4 label">
+                          Password{" "}
+                          <span style={{ color: "#F00", float: "none" }}>
+                            *
+                          </span>
+                        </div>
+                        <div className="col-sm-6">
+                          <input
+                            autoComplete="off"
+                            type="password"
+                            className="form-control"
+                            name="password"
+                            id="password"
+                            placeholder="Valid Password"
+                            required
+                            aria-required="true"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="row">
+                        <div className="col-sm-4 label"></div>
+                        <div className="col-sm-6">
+                          <button
+                            type="submit"
+                            name="action"
+                            className="btn btn-block btn-primary"
+                            value="valContinue"
+                          >
+                            Login
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+
+                  <div className="form-group" style={{ float: "right" }}>
+                    <a
+                      href={`https://appointment.blsslovakiavisa.com/${name}/registration`}
+                      className="btn btn-block btn-primary"
+                    >
+                      Registration
+                    </a>
+                  </div>
+                  <div
+                    className="form-group"
+                    style={{ float: "right", marginRight: "2%" }}
+                  >
+                    <a
+                      href={`https://appointment.blsslovakiavisa.com/${name}/forgot`}
+                      className="btn btn-block btn-primary"
+                    >
+                      Forgot
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div className="responsive-bootstrap-toolkit">
+        <div className="device-xs hidden-sm-up"></div>
+        <div className="device-sm hidden-xs-down hidden-md-up"></div>
+        <div className="device-md hidden-sm-down hidden-lg-up"></div>
+        <div className="device-lg hidden-md-down hidden-xl-up"></div>
+        <div className="device-xl hidden-lg-down"></div>
+      </div>
+    </>
+  );
+};
+
+export default Login;

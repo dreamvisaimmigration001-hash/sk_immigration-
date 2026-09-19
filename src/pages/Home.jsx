@@ -1,0 +1,309 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+import { Send, FileText, Copy, MapPin, Plane } from 'lucide-react';
+
+const Home = () => {
+  return (
+    <>
+<section className="banner-section style-two">
+			<div className="banner-carousel owl-theme owl-carousel owl-dots-none">
+				<div className="slide-item">
+					<div className="image-layer" style={{ backgroundImage: 'url(/assets/images/banner.jpg)', marginTop: '100px',  }}></div>
+					<div className="auto-container">
+						<div className="row clearfix">
+							<div className="col-xl-10 col-lg-12 col-md-12 offset-xl-1 content-column">
+								<div className="content-box centred">
+									{/* <span className="top-text">Effective Immigration Solution</span> */}
+									<div className="title-text" id="texttitle">
+										<h3>Welcome to</h3>
+										{/* h1>Slovakia visa application center in India</h1 */}
+										<h1>BLS International</h1>
+										<p>Official partner of Embassy of Slovakia</p>
+										{/* div className="dotted-box">
+											<span className="dotted"></span>
+											<span className="dotted"></span>
+											<span className="dotted"></span>
+										</div */}
+									</div>
+									{/* 
+                                    <div className="btn-box">
+                                        <a href="index.html" className="theme-btn-one"><Send className="flaticon-send" />Discover Solutions</a>
+                                    </div> */}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section><section className="apply-style-two pt-0 pb-0 step-overlay">
+			<div className="auto-container">
+				<div className="row clearfix">
+					<div className="col-lg-4 col-md-6 col-sm-12 single-column centred">
+						<div className="single-item wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+							<div className="inner-box" id="innerbox">
+								<h6><span>1</span></h6>
+								<div className="icon-box">
+									<div className="arrow" style={{ backgroundImage: 'url(/assets/images/icons/arrow-1.png)',  }}></div>
+									<FileText className="flaticon-document" />
+								</div>
+								<h3><a href="https://appointment.blsslovakiavisa.com/app_india/login" target="_blank">Book an <br /> appointment</a></h3>
+							</div>
+						</div>
+					</div>
+					{/* <div className="col-lg-3 col-md-6 col-sm-12 single-column centred">
+						<div className="single-item wow fadeInUp animated animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+							<div className="inner-box">
+								<h6><span>2</span></h6>
+								<div className="icon-box">
+									<div className="arrow" style={{ backgroundImage: 'url(/assets/images/icons/arrow-1.png)',  }}></div>
+									<Copy className="flaticon-copy" />
+								</div>
+								<h3><Link to="/contact_us.php">Upload All Your <br />Attested Documents</Link></h3>
+							</div>
+						</div>
+					</div> */}
+					<div className="col-lg-4 col-md-6 col-sm-12 single-column centred">
+						<div className="single-item wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+							<div className="inner-box" id="innerbox">
+								<h6><span>2</span></h6>
+								<div className="icon-box">
+									<div className="arrow" style={{ backgroundImage: 'url(/assets/images/icons/arrow-1.png)',  }}></div>
+									<MapPin className="flaticon-geography" />
+								</div>
+								<h3><Link to="/contact_us.php">Visit <br />our center</Link></h3>
+							</div>
+						</div>
+					</div>
+					<div className="col-lg-4 col-md-6 col-sm-12 single-column centred">
+						<div className="single-item wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+							<div className="inner-box" id="innerbox">
+								<h6><span>3</span></h6>
+								<div className="icon-box"><Plane className="flaticon-plane" /></div>
+								<h3><Link to="/track_application.php">Track <br />your application</Link></h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section><section className="about-section" id="changecolor">
+      <div className="pattern-layer" style={{ backgroundImage: 'url(/assets/images/shape/pattern-1.png)',  }}></div>
+      <div className="auto-container">
+        <div className="row align-items-center clearfix">
+          <div className="col-lg-12 col-md-12 col-sm-12 content-column">
+            <div id="content_block_1">
+              <div className="content-box">
+                <div className="sec-title">
+                  {/*  <p>who are BLS</p> */}
+                  {/*  Runing marque end  */}
+                  <div>
+                                        <div className="clear"></div>
+                  </div>
+                  {/*  Runing marque end  */}
+                  <h2>Slovakia Visa Application - India &amp; Nepal</h2>
+                  <div className="dotted-box"> <span className="dotted"></span> <span className="dotted"></span> <span className="dotted"></span> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-6 col-md-12 col-sm-12 image-column">
+            <div id="image_block_1">
+              <div className="image-box">
+                <figure className="image"><img src="/assets/images/resource/about-1.jpg" alt="BLS International" /></figure>
+                <div className="box">
+                  <div className="inner">
+                    <div className="icon-box">
+                      <div className="icon icon-1"></div>
+                      <div className="icon icon-2"></div>
+                    </div>
+                    <h1>20+</h1>
+                    <p>Years of global experience</p>
+                    <h1>70+</h1>
+                    <p>Countries of operations</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-6 col-md-12 col-sm-12 content-column">
+            <div id="content_block_1">
+              <div className="content-box">
+                {/* <div className="bold-text">
+					<p>"BLS International Services Ltd." is headquartered in New Delhi, India and is a specialist service provider of Outsourcing for Visa, Passport, Consular, Attestation and Apostille Services to the Diplomatic Missions across the world.</p>
+				</div> */}
+                <div className="text">
+                  {/*  <p className="mb-3">"BLS International Services Ltd." is headquartered in New Delhi, India and is a specialist service provider of Outsourcing for Visa, Passport, Consular, Attestation and Apostille Services to the Diplomatic Missions across the world.</p> */}
+                  <p>BLS International is a trusted global tech-enabled service partner for governments and citizens. It provides administrative and non-judgmental services to the Diplomatic Missions. The company is recognized as 'Best under a Billion Company" by Forbes Asia and is amongst "Fortune India's Next 500 companies".</p>
+                </div>
+                <div className="btn-box"> <Link to="/about_us.php" className="theme-btn-two">About us<Send className="flaticon-send" /></Link> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><section className="feature-section">
+      <div className="auto-container">
+        <div className="row clearfix">
+          <div className="col-lg-12 col-md-12 col-sm-12 content-column">
+            <div id="content_block_1">
+              <div className="content-box">
+                <div className="sec-title">
+                  <h2>How to apply</h2>
+                  <div className="dotted-box"> <span className="dotted"></span> <span className="dotted"></span> <span className="dotted"></span> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6 col-sm-12 feature-block">
+            <div className="feature-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+              <div className="inner-box">
+                <figure className="image-box"><img src="/assets/images/resource/feature-1.jpg" alt="Know Your Visa Type" /></figure>
+                <div className="text">
+                  <h3><Link to="/visa_types.php">Know your visa type</Link></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6 col-sm-12 feature-block">
+            <div className="feature-block-one wow fadeInUp animated animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+              <div className="inner-box">
+                <figure className="image-box"><img src="/assets/images/resource/feature-2.jpg" alt="Book Appointment" /></figure>
+                <div className="text">
+                  <h3><a href="https://appointment.blsslovakiavisa.com/app_india/login" target="_blank">Book your appointment</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6 col-sm-12 feature-block">
+            <div className="feature-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+              <div className="inner-box">
+                <figure className="image-box"><img src="/assets/images/img-location.jpg" style={{ height: '245px',  }} alt="Visit our Centre" /></figure>
+                <div className="text">
+                  <h3><Link to="/contact_us.php">Visit our centre</Link></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><section className="vas-section bg-color-1">
+      <div className="auto-container">
+        <div className="top-inner">
+          <div className="row clearfix">
+            <div className="col-lg-12 col-md-12 col-sm-12 title-column">
+              <div className="sec-title mb-0">
+                <h2>Value added services (optional)</h2>
+                <div className="dotted-box">
+                  <span className="dotted"></span>
+                  <span className="dotted"></span>
+                  <span className="dotted"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="four-item-carousel owl-carousel owl-theme owl-nav-none">
+          <div className="vas-block-one centred">
+            <div className="inner-box">
+              <div className="icon-box"><img src="/assets/images/img-photocopy.jpg" alt="Photocopy" />
+                {/* <img src="/assets/images/icon-delivery.png" alt="" /> */}
+              </div>
+              <h3><a href="additional_services.php#courier">Photocopy</a></h3>
+              <div className="link"><a href="additional_services.php#photocopy">Read more <Send className="flaticon-send" /></a></div>
+            </div>
+          </div>
+          {/* div className="vas-block-one centred">
+            <div className="inner-box">
+              <div className="icon-box"><img src="/assets/images/img-photobooth.jpg" alt="" />
+                <!--<img src="/assets/images/icon-delivery.png" alt="" />-- >
+              </div>
+              <h3><a href="additional_services.php#photobooth">Photobooth</a></h3>
+              <div className="link"><a href="additional_services.php#photobooth">Read more <Send className="flaticon-send" /></a></div>
+            </div>
+          </div */}
+          <div className="vas-block-one centred">
+            <div className="inner-box">
+              <div className="icon-box"><img src="/assets/images/img-photobooth.jpg" alt="Photograph" />
+                {/* <img src="/assets/images/icon-delivery.png" alt="" /> */}
+              </div>
+              <h3><a href="additional_services.php#photograph">Photograph</a></h3>
+              <div className="link"><a href="additional_services.php#photograph">Read more <Send className="flaticon-send" /></a></div>
+            </div>
+          </div>
+          <div className="vas-block-one centred">
+            <div className="inner-box">
+              <div className="icon-box"><img src="/assets/images/img-courier-delivery.jpg" alt="Courier Delivery" />
+                {/* <img src="/assets/images/icon-delivery.png" alt="" /> */}
+              </div>
+              <h3><a href="additional_services.php#courier">Courier service</a></h3>
+              <div className="link"><a href="additional_services.php#courier">Read more <Send className="flaticon-send" /></a></div>
+            </div>
+          </div>
+          {/* div className="vas-block-one centred">
+            <div className="inner-box">
+              <div className="icon-box"><img src="/assets/images/travel-insurance.jpg" style={{ width: '195px', height: '130px',  }} alt="" />
+            </div>
+              <h3><a href="additional_services.php#travelinsurance">Travel Insurance</a></h3>
+              <div className="link"><a href="additional_services.php#travelinsurance">Read more <Send className="flaticon-send" /></a></div>
+            </div>
+          </div */}
+          <div className="vas-block-one">
+            <div className="inner-box">
+              <div className="icon-box"><img src="/assets/images/sms-services.jpg" alt="SMS Service" /></div>
+              <h3><a href="additional_services.php#sms">SMS service</a></h3>
+              <div className="link"><a href="additional_services.php#sms">Read more <Send className="flaticon-send" /></a></div>
+            </div>
+          </div>
+          <div className="vas-block-one">
+            <div className="inner-box">
+              <div className="icon-box"><img src="/assets/images/on-demand-visa-service.jpg" alt="Premium Lounge" />
+                {/* <img src="/assets/images/icon-premium-lounge.png" alt=""  /> */}
+              </div>
+              <h3><a href="additional_services.php#premium_lounge">Premium lounge</a></h3>
+              <div className="link"><a href="additional_services.php#premium_lounge">Read more <Send className="flaticon-send" /></a></div>
+            </div>
+          </div>
+          {/* <div className="vas-block-one">
+            <div className="inner-box">
+              <div className="icon-box"><img src="/assets/images/flexi-hr-service.jpg" alt="" />
+                <!- -<img src="/assets/images/icon-time.png" alt="" />-- >
+              </div>
+              <h3><Link to="/additional_services.php">Flexi hr Services</Link></h3>
+              <div className="link"><Link to="/additional_services.php">Read more <Send className="flaticon-send" /></Link></div>
+            </div>
+          </div>
+          <div className="vas-block-one">
+            <div className="inner-box">
+              <div className="icon-box"><img src="/assets/images/on-demand-visa-service.jpg" alt="" />
+                <! --<img src="/assets/images/icon-mobile-bio.png" alt="" />-- >
+              </div>
+              <h3><Link to="/additional_services.php">On demand visa Service</Link></h3>
+              <div className="link"><Link to="/additional_services.php">Read more <Send className="flaticon-send" /></Link></div>
+            </div>
+          </div> */}
+          {/* div className="vas-block-one">
+            <div className="inner-box">
+              <div className="icon-box"><img src="/assets/images/img-prime-time-service.jpg" alt="" />
+                <!--<img src="/assets/images/icon-prime-time.png" alt="" />-- >
+              </div>
+              <h3><a href="additional_services.php#prime_time">Prime Time Service</a></h3>
+              <div className="link"><a href="additional_services.php#prime_time">Read more <Send className="flaticon-send" /></a></div>
+            </div>
+          </div */}
+          {/* 
+						<div className="service-block-one">
+							<div className="inner-box">
+								<div className="icon-box"><img src="/assets/images/icon-card.png" alt="" /></div>
+								<h3><Link to="/additional_services.php">HDFC Forex Card</Link></h3>
+								<div className="link"><Link to="/additional_services.php">Read more <Send className="flaticon-send" /></Link></div>
+							</div>
+						</div>
+					 */}
+        </div>
+      </div>
+    </section>
+    </>
+  );
+};
+
+export default Home;
