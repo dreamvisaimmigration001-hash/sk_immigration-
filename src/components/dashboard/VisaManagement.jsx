@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, Search } from 'lucide-react';
+import { Plus, Search, Download } from 'lucide-react';
 
 const API_URL = 'https://api-immigration.vercel.app/api';
 
@@ -8,14 +8,45 @@ const VisaManagement = () => {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(true);
   
-  const [formData, setFormData] = useState({ 
+  const initialFormData = { 
     applicationType: 'visa',
-    applicantName: '',
-    passportNumber: '',
-    country: 'Canada',
-    status: 'Pending',
-    applicationDate: new Date().toISOString().split('T')[0]
-  });
+    familyName: '',
+    givenNames: '',
+    trn: '',
+    visaorigin: 'sk',
+    documentNumber: '',
+    visaClassSubclass: '',
+    visaApplicant: '',
+    visaGrantDate: '',
+    visaExpiryDate: '',
+    location: '',
+    visaStatus: '',
+    visaGrantNumber: '',
+    entriesAllowed: '',
+    mustNotArriveAfter: '',
+    enterBeforeDate: '',
+    periodOfStay: '',
+    visaType: '',
+    dateOfBirth: '',
+    nationality: '',
+    biometricsNumber: '',
+    dateOfBiometricsEnrolment: '',
+    biometricsExpiryDate: '',
+    uci: '',
+    applicationNumber: '',
+    receiveDate: '',
+    medicalExaminationPassDate: '',
+    documentReviewDate: '',
+    employer: '',
+    type: '',
+    status: '',
+    fullName: '',
+    jobTitle: '',
+    documentName: ''
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
+  const [file, setFile] = useState(null);
 
   useEffect(() => {
     fetchVisas();
@@ -29,12 +60,12 @@ const VisaManagement = () => {
   const fetchVisas = async () => {
     setLoading(true);
     try {
-      const res = await fetch(`${API_URL}/visas`, {
+      const res = await fetch(`${API_URL}/visas?origin=sk`, {
         headers: getAuthHeader()
       });
       if (res.ok) {
         const data = await res.json();
-        setVisas(data);
+        setVisas(data.visas || []);
       }
     } catch (err) {
       console.error("Failed to fetch visas:", err);
@@ -42,27 +73,41 @@ const VisaManagement = () => {
     setLoading(false);
   };
 
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleFileChange = (e) => {
+    if (e.target.files && e.target.files[0]) {
+      setFile(e.target.files[0]);
+    }
+  };
+
   const handleCreateVisa = async (e) => {
     e.preventDefault();
     try {
-      // Note: Backend uses multer for file upload so we should ideally use FormData
-      // but for this MVP we'll send a JSON request without the file to see if it works,
-      // or we must switch to FormData.
       const fd = new FormData();
-      Object.keys(formData).forEach(key => fd.append(key, formData[key]));
-      // Note: add dummy document if required by backend
-      // fd.append('document', new Blob([''], { type: 'application/pdf' }), 'dummy.pdf');
+      const payload = { ...formData, origin: 'sk' };
+      Object.keys(payload).forEach(key => {
+        if (payload[key]) {
+          fd.append(key, payload[key]);
+        }
+      });
+      if (file) {
+        fd.append('document', file);
+        fd.append('documentName', formData.documentName || file.name);
+      }
 
       const res = await fetch(`${API_URL}/visas`, {
         method: 'POST',
-        headers: getAuthHeader(), // DON'T set Content-Type to application/json if using FormData
+        headers: getAuthHeader(), 
         body: fd
       });
       if (res.ok) {
         setShowModal(false);
         fetchVisas();
-        // Reset form
-        setFormData({ ...formData, applicantName: '', passportNumber: '' });
+        setFormData(initialFormData);
+        setFile(null);
       } else {
         const data = await res.json();
         alert(`Error: ${data.message}`);
@@ -99,17 +144,18 @@ const VisaManagement = () => {
               <tr>
                 <th style={{ padding: '12px 20px', color: '#4b5563', fontWeight: '600', fontSize: '0.875rem' }}>ID (Grant No.)</th>
                 <th style={{ padding: '12px 20px', color: '#4b5563', fontWeight: '600', fontSize: '0.875rem' }}>Applicant Name</th>
-                <th style={{ padding: '12px 20px', color: '#4b5563', fontWeight: '600', fontSize: '0.875rem' }}>Passport No.</th>
+                <th style={{ padding: '12px 20px', color: '#4b5563', fontWeight: '600', fontSize: '0.875rem' }}>Document No.</th>
                 <th style={{ padding: '12px 20px', color: '#4b5563', fontWeight: '600', fontSize: '0.875rem' }}>Type</th>
                 <th style={{ padding: '12px 20px', color: '#4b5563', fontWeight: '600', fontSize: '0.875rem' }}>Status</th>
+                <th style={{ padding: '12px 20px', color: '#4b5563', fontWeight: '600', fontSize: '0.875rem' }}>Document</th>
               </tr>
             </thead>
             <tbody>
               {visas.map((visa, index) => (
                 <tr key={visa._id} style={{ borderBottom: index !== visas.length - 1 ? '1px solid #e5e7eb' : 'none' }}>
-                  <td style={{ padding: '12px 20px', color: '#111827', fontSize: '0.875rem' }}>{visa.grantNumber || visa._id}</td>
-                  <td style={{ padding: '12px 20px', color: '#111827', fontSize: '0.875rem', fontWeight: '500' }}>{visa.applicantName || 'N/A'}</td>
-                  <td style={{ padding: '12px 20px', color: '#4b5563', fontSize: '0.875rem' }}>{visa.passportNumber || 'N/A'}</td>
+                  <td style={{ padding: '12px 20px', color: '#111827', fontSize: '0.875rem' }}>{visa.visaGrantNumber || visa.trn || visa._id}</td>
+                  <td style={{ padding: '12px 20px', color: '#111827', fontSize: '0.875rem', fontWeight: '500' }}>{visa.givenNames} {visa.familyName}</td>
+                  <td style={{ padding: '12px 20px', color: '#4b5563', fontSize: '0.875rem' }}>{visa.documentNumber || 'N/A'}</td>
                   <td style={{ padding: '12px 20px', color: '#4b5563', fontSize: '0.875rem' }}>{visa.applicationType}</td>
                   <td style={{ padding: '12px 20px' }}>
                     <span style={{ 
@@ -117,16 +163,23 @@ const VisaManagement = () => {
                       borderRadius: '9999px', 
                       fontSize: '0.75rem', 
                       fontWeight: '600',
-                      backgroundColor: visa.status === 'Approved' ? '#dcfce7' : '#fef9c3',
-                      color: visa.status === 'Approved' ? '#166534' : '#854d0e'
+                      backgroundColor: (visa.visaStatus === 'Approved' || visa.status === 'Approved') ? '#dcfce7' : '#fef9c3',
+                      color: (visa.visaStatus === 'Approved' || visa.status === 'Approved') ? '#166534' : '#854d0e'
                     }}>
-                      {visa.status || 'Pending'}
+                      {visa.visaStatus || visa.status || 'Pending'}
                     </span>
+                  </td>
+                  <td style={{ padding: '12px 20px' }}>
+                    {visa.document && visa.document.length > 0 && visa.document[0].url && (
+                      <a href={visa.document[0].url} target="_blank" rel="noreferrer" style={{ color: '#2563eb', display: 'flex', alignItems: 'center', gap: '4px', textDecoration: 'none', fontSize: '0.875rem' }}>
+                        <Download size={14} /> Download
+                      </a>
+                    )}
                   </td>
                 </tr>
               ))}
               {visas.length === 0 && (
-                <tr><td colSpan="5" style={{ padding: '20px', textAlign: 'center' }}>No visas found.</td></tr>
+                <tr><td colSpan="6" style={{ padding: '20px', textAlign: 'center' }}>No visas found.</td></tr>
               )}
             </tbody>
           </table>
@@ -134,37 +187,118 @@ const VisaManagement = () => {
       </div>
 
       {showModal && (
-        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <div style={{ backgroundColor: 'white', padding: '30px', borderRadius: '8px', width: '500px' }}>
+        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 50 }}>
+          <div style={{ backgroundColor: 'white', padding: '30px', borderRadius: '8px', width: '800px', maxHeight: '90vh', overflowY: 'auto' }}>
             <h3 style={{ marginTop: 0, marginBottom: '20px', fontSize: '1.25rem' }}>Create New Application</h3>
-            <form onSubmit={handleCreateVisa} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-              <div>
-                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.875rem', fontWeight: '500' }}>Applicant Name</label>
-                <input type="text" value={formData.applicantName} onChange={e => setFormData({...formData, applicantName: e.target.value})} required style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }} />
+            <form onSubmit={handleCreateVisa} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
+              
+              <div style={{ gridColumn: '1 / -1' }}>
+                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.875rem', fontWeight: '500' }}>Application Type</label>
+                <select name="applicationType" value={formData.applicationType} onChange={handleInputChange} style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }}>
+                  <option value="schengen">Schengen Visa (Short Term)</option>
+                  <option value="national">National Visa (Long Term)</option>
+                  <option value="visa">Other Visa</option>
+                </select>
               </div>
-              <div style={{ display: 'flex', gap: '15px' }}>
-                <div style={{ flex: 1 }}>
-                  <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.875rem', fontWeight: '500' }}>Application Type</label>
-                  <select value={formData.applicationType} onChange={e => setFormData({...formData, applicationType: e.target.value})} style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }}>
-                    <option value="visa">Visa</option>
-                    <option value="sponsorship">Sponsorship</option>
-                    <option value="aewv">AEWV</option>
-                  </select>
-                </div>
-                <div style={{ flex: 1 }}>
-                  <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.875rem', fontWeight: '500' }}>Passport Number</label>
-                  <input type="text" value={formData.passportNumber} onChange={e => setFormData({...formData, passportNumber: e.target.value})} required style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }} />
-                </div>
+
+              <div>
+                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.875rem', fontWeight: '500' }}>Family Name</label>
+                <input type="text" name="familyName" value={formData.familyName} onChange={handleInputChange} style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }} />
               </div>
               <div>
-                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.875rem', fontWeight: '500' }}>Status</label>
-                <select value={formData.status} onChange={e => setFormData({...formData, status: e.target.value})} style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }}>
+                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.875rem', fontWeight: '500' }}>Given Names</label>
+                <input type="text" name="givenNames" value={formData.givenNames} onChange={handleInputChange} style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }} />
+              </div>
+
+              <div>
+                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.875rem', fontWeight: '500' }}>Reference Number</label>
+                <input type="text" name="applicationNumber" value={formData.applicationNumber} onChange={handleInputChange} style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }} />
+              </div>
+
+
+              <div>
+                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.875rem', fontWeight: '500' }}>Document Number (Passport)</label>
+                <input type="text" name="documentNumber" value={formData.documentNumber} onChange={handleInputChange} style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }} />
+              </div>
+              <div>
+                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.875rem', fontWeight: '500' }}>Visa Category</label>
+                <select name="visaClassSubclass" value={formData.visaClassSubclass} onChange={handleInputChange} style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }}>
+                  <option value="">Select Category...</option>
+                  <option value="Tourism">Tourism</option>
+                  <option value="Business">Business</option>
+                  <option value="Employment">Employment</option>
+                  <option value="Visit Family or Friends">Visit Family or Friends</option>
+                  <option value="Study/Research">Study / Research</option>
+                  <option value="Medical Treatment">Medical Treatment</option>
+                  <option value="Cultural/Sports">Cultural / Sports</option>
+                </select>
+              </div>
+
+              <div>
+                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.875rem', fontWeight: '500' }}>Visa Grant Number</label>
+                <input type="text" name="visaGrantNumber" value={formData.visaGrantNumber} onChange={handleInputChange} style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }} />
+              </div>
+              <div>
+                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.875rem', fontWeight: '500' }}>Visa Status</label>
+                <select name="visaStatus" value={formData.visaStatus} onChange={handleInputChange} style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }}>
                   <option value="Pending">Pending</option>
+                  <option value="In Process">In Process</option>
                   <option value="Approved">Approved</option>
                   <option value="Rejected">Rejected</option>
                 </select>
               </div>
-              <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '10px', marginTop: '25px' }}>
+
+              <div>
+                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.875rem', fontWeight: '500' }}>Visa Grant Date</label>
+                <input type="date" name="visaGrantDate" value={formData.visaGrantDate} onChange={handleInputChange} style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }} />
+              </div>
+              <div>
+                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.875rem', fontWeight: '500' }}>Visa Expiry Date</label>
+                <input type="date" name="visaExpiryDate" value={formData.visaExpiryDate} onChange={handleInputChange} style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }} />
+              </div>
+
+              <div>
+                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.875rem', fontWeight: '500' }}>Date of Birth</label>
+                <input type="date" name="dateOfBirth" value={formData.dateOfBirth} onChange={handleInputChange} style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }} />
+              </div>
+              <div>
+                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.875rem', fontWeight: '500' }}>Nationality</label>
+                <input type="text" name="nationality" value={formData.nationality} onChange={handleInputChange} style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }} />
+              </div>
+
+              <div>
+                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.875rem', fontWeight: '500' }}>Entries Allowed</label>
+                <select name="entriesAllowed" value={formData.entriesAllowed} onChange={handleInputChange} style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }}>
+                  <option value="">Select...</option>
+                  <option value="Single">Single</option>
+                  <option value="Double">Double</option>
+                  <option value="Multiple">Multiple</option>
+                </select>
+              </div>
+              <div>
+                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.875rem', fontWeight: '500' }}>Must Not Arrive After</label>
+                <input type="date" name="mustNotArriveAfter" value={formData.mustNotArriveAfter} onChange={handleInputChange} style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }} />
+              </div>
+
+              <div>
+                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.875rem', fontWeight: '500' }}>Enter Before Date</label>
+                <input type="date" name="enterBeforeDate" value={formData.enterBeforeDate} onChange={handleInputChange} style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }} />
+              </div>
+              <div>
+                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.875rem', fontWeight: '500' }}>Period Of Stay (Days)</label>
+                <input type="number" min="0" placeholder="e.g. 90" name="periodOfStay" value={formData.periodOfStay} onChange={handleInputChange} style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }} />
+              </div>
+              
+              <div style={{ gridColumn: '1 / -1' }}>
+                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.875rem', fontWeight: '500' }}>Document Name (Optional)</label>
+                <input type="text" name="documentName" value={formData.documentName} placeholder="Custom name for the uploaded document" onChange={handleInputChange} style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }} />
+              </div>
+              <div style={{ gridColumn: '1 / -1' }}>
+                <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.875rem', fontWeight: '500' }}>Document Upload (PDF)</label>
+                <input type="file" name="document" onChange={handleFileChange} accept="application/pdf,image/*" style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }} />
+              </div>
+
+              <div style={{ gridColumn: '1 / -1', display: 'flex', justifyContent: 'flex-end', gap: '10px', marginTop: '15px' }}>
                 <button type="button" onClick={() => setShowModal(false)} style={{ padding: '8px 16px', border: '1px solid #d1d5db', borderRadius: '4px', backgroundColor: 'white', cursor: 'pointer' }}>Cancel</button>
                 <button type="submit" style={{ padding: '8px 16px', border: 'none', borderRadius: '4px', backgroundColor: '#2563eb', color: 'white', cursor: 'pointer' }}>Create Application</button>
               </div>

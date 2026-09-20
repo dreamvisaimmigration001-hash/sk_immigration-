@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 
 // Pages
 import Home from "./pages/Home";
+import VisaTypes from "./pages/VisaTypes";
 import SchengenTourism from "./pages/SchengenTourism";
 import SchengenBusiness from "./pages/SchengenBusiness";
 import SchengenFamilyFriends from "./pages/SchengenFamilyFriends";
@@ -42,6 +43,7 @@ function AppContent() {
           <Route path="/index.php" element={<Home />} />
           <Route path="/schengen_tourism.php" element={<SchengenTourism />} />
           <Route path="/schengen_business.php" element={<SchengenBusiness />} />
+          <Route path="/visa_types.php" element={<VisaTypes />} />
           <Route
             path="/schengen_family_friends.php"
             element={<SchengenFamilyFriends />}

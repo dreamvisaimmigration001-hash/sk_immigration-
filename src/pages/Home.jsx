@@ -186,120 +186,126 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </section><section className="vas-section bg-color-1">
+    </section>    <section className="vas-section bg-color-1">
       <div className="auto-container">
         <div className="top-inner">
           <div className="row clearfix">
             <div className="col-lg-12 col-md-12 col-sm-12 title-column">
               <div className="sec-title mb-0">
-                <h2>Value added services (optional)</h2>
+                <h2 data-asw-org-font-size="23" style={{ fontSize: '23px' }}>Value added services (optional)</h2>
                 <div className="dotted-box">
-                  <span className="dotted"></span>
-                  <span className="dotted"></span>
-                  <span className="dotted"></span>
+                  <span className="dotted" data-asw-org-font-size="13" style={{ fontSize: '13px' }}></span>
+                  <span className="dotted" data-asw-org-font-size="13" style={{ fontSize: '13px' }}></span>
+                  <span className="dotted" data-asw-org-font-size="13" style={{ fontSize: '13px' }}></span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="four-item-carousel owl-carousel owl-theme owl-nav-none">
-          <div className="vas-block-one centred">
+        <div className="four-item-carousel owl-carousel owl-theme owl-nav-none owl-loaded owl-drag">
+        <div className="owl-stage-outer"><div className="owl-stage" style={{ transform: 'translate3d(-1638px, 0px, 0px)', transition: '0.5s', width: '3510px' }}><div className="owl-item cloned" style={{ width: '204px', marginRight: '30px' }}><div className="vas-block-one centred">
             <div className="inner-box">
               <div className="icon-box"><img src="/assets/images/img-photocopy.jpg" alt="Photocopy" />
-                {/* <img src="/assets/images/icon-delivery.png" alt="" /> */}
               </div>
-              <h3><a href="additional_services.php#courier">Photocopy</a></h3>
-              <div className="link"><a href="additional_services.php#photocopy">Read more <Send className="flaticon-send" /></a></div>
+              <h3 data-asw-org-font-size="15" style={{ fontSize: '15px' }}><a href="additional_services.php#courier" data-asw-org-font-size="15" style={{ fontSize: '15px' }}>Photocopy</a></h3>
+              <div className="link"><a href="additional_services.php#photocopy" data-asw-org-font-size="16" style={{ fontSize: '16px' }}>Read more <i className="flaticon-send"></i></a></div>
             </div>
-          </div>
-          {/* div className="vas-block-one centred">
-            <div className="inner-box">
-              <div className="icon-box"><img src="/assets/images/img-photobooth.jpg" alt="" />
-                <!--<img src="/assets/images/icon-delivery.png" alt="" />-- >
-              </div>
-              <h3><a href="additional_services.php#photobooth">Photobooth</a></h3>
-              <div className="link"><a href="additional_services.php#photobooth">Read more <Send className="flaticon-send" /></a></div>
-            </div>
-          </div */}
-          <div className="vas-block-one centred">
+          </div></div><div className="owl-item cloned" style={{ width: '204px', marginRight: '30px' }}><div className="vas-block-one centred">
             <div className="inner-box">
               <div className="icon-box"><img src="/assets/images/img-photobooth.jpg" alt="Photograph" />
-                {/* <img src="/assets/images/icon-delivery.png" alt="" /> */}
               </div>
-              <h3><a href="additional_services.php#photograph">Photograph</a></h3>
-              <div className="link"><a href="additional_services.php#photograph">Read more <Send className="flaticon-send" /></a></div>
+              <h3 data-asw-org-font-size="15" style={{ fontSize: '15px' }}><a href="additional_services.php#photograph" data-asw-org-font-size="15" style={{ fontSize: '15px' }}>Photograph</a></h3>
+              <div className="link"><a href="additional_services.php#photograph" data-asw-org-font-size="16" style={{ fontSize: '16px' }}>Read more <i className="flaticon-send"></i></a></div>
             </div>
-          </div>
-          <div className="vas-block-one centred">
+          </div></div><div className="owl-item cloned" style={{ width: '204px', marginRight: '30px' }}><div className="vas-block-one centred">
             <div className="inner-box">
               <div className="icon-box"><img src="/assets/images/img-courier-delivery.jpg" alt="Courier Delivery" />
-                {/* <img src="/assets/images/icon-delivery.png" alt="" /> */}
               </div>
-              <h3><a href="additional_services.php#courier">Courier service</a></h3>
-              <div className="link"><a href="additional_services.php#courier">Read more <Send className="flaticon-send" /></a></div>
+              <h3 data-asw-org-font-size="15" style={{ fontSize: '15px' }}><a href="additional_services.php#courier" data-asw-org-font-size="15" style={{ fontSize: '15px' }}>Courier service</a></h3>
+              <div className="link"><a href="additional_services.php#courier" data-asw-org-font-size="16" style={{ fontSize: '16px' }}>Read more <i className="flaticon-send"></i></a></div>
             </div>
-          </div>
-          {/* div className="vas-block-one centred">
-            <div className="inner-box">
-              <div className="icon-box"><img src="/assets/images/travel-insurance.jpg" style={{ width: '195px', height: '130px',  }} alt="" />
-            </div>
-              <h3><a href="additional_services.php#travelinsurance">Travel Insurance</a></h3>
-              <div className="link"><a href="additional_services.php#travelinsurance">Read more <Send className="flaticon-send" /></a></div>
-            </div>
-          </div */}
-          <div className="vas-block-one">
+          </div></div><div className="owl-item cloned" style={{ width: '204px', marginRight: '30px' }}><div className="vas-block-one">
             <div className="inner-box">
               <div className="icon-box"><img src="/assets/images/sms-services.jpg" alt="SMS Service" /></div>
-              <h3><a href="additional_services.php#sms">SMS service</a></h3>
-              <div className="link"><a href="additional_services.php#sms">Read more <Send className="flaticon-send" /></a></div>
+              <h3 data-asw-org-font-size="15" style={{ fontSize: '15px' }}><a href="additional_services.php#sms" data-asw-org-font-size="15" style={{ fontSize: '15px' }}>SMS service</a></h3>
+              <div className="link"><a href="additional_services.php#sms" data-asw-org-font-size="16" style={{ fontSize: '16px' }}>Read more <i className="flaticon-send"></i></a></div>
             </div>
-          </div>
-          <div className="vas-block-one">
+          </div></div><div className="owl-item cloned" style={{ width: '204px', marginRight: '30px' }}><div className="vas-block-one">
             <div className="inner-box">
               <div className="icon-box"><img src="/assets/images/on-demand-visa-service.jpg" alt="Premium Lounge" />
-                {/* <img src="/assets/images/icon-premium-lounge.png" alt=""  /> */}
               </div>
-              <h3><a href="additional_services.php#premium_lounge">Premium lounge</a></h3>
-              <div className="link"><a href="additional_services.php#premium_lounge">Read more <Send className="flaticon-send" /></a></div>
+              <h3 data-asw-org-font-size="15" style={{ fontSize: '15px' }}><a href="additional_services.php#premium_lounge" data-asw-org-font-size="15" style={{ fontSize: '15px' }}>Premium lounge</a></h3>
+              <div className="link"><a href="additional_services.php#premium_lounge" data-asw-org-font-size="16" style={{ fontSize: '16px' }}>Read more <i className="flaticon-send"></i></a></div>
             </div>
-          </div>
-          {/* <div className="vas-block-one">
+          </div></div><div className="owl-item" style={{ width: '204px', marginRight: '30px' }}><div className="vas-block-one centred">
             <div className="inner-box">
-              <div className="icon-box"><img src="/assets/images/flexi-hr-service.jpg" alt="" />
-                <!- -<img src="/assets/images/icon-time.png" alt="" />-- >
+              <div className="icon-box"><img src="/assets/images/img-photocopy.jpg" alt="Photocopy" />
               </div>
-              <h3><Link to="/additional_services.php">Flexi hr Services</Link></h3>
-              <div className="link"><Link to="/additional_services.php">Read more <Send className="flaticon-send" /></Link></div>
+              <h3 data-asw-org-font-size="15" style={{ fontSize: '15px' }}><a href="additional_services.php#courier" data-asw-org-font-size="15" style={{ fontSize: '15px' }}>Photocopy</a></h3>
+              <div className="link"><a href="additional_services.php#photocopy" data-asw-org-font-size="16" style={{ fontSize: '16px' }}>Read more <i className="flaticon-send"></i></a></div>
             </div>
-          </div>
-          <div className="vas-block-one">
+          </div></div><div className="owl-item" style={{ width: '204px', marginRight: '30px' }}><div className="vas-block-one centred">
             <div className="inner-box">
-              <div className="icon-box"><img src="/assets/images/on-demand-visa-service.jpg" alt="" />
-                <! --<img src="/assets/images/icon-mobile-bio.png" alt="" />-- >
+              <div className="icon-box"><img src="/assets/images/img-photobooth.jpg" alt="Photograph" />
               </div>
-              <h3><Link to="/additional_services.php">On demand visa Service</Link></h3>
-              <div className="link"><Link to="/additional_services.php">Read more <Send className="flaticon-send" /></Link></div>
+              <h3 data-asw-org-font-size="15" style={{ fontSize: '15px' }}><a href="additional_services.php#photograph" data-asw-org-font-size="15" style={{ fontSize: '15px' }}>Photograph</a></h3>
+              <div className="link"><a href="additional_services.php#photograph" data-asw-org-font-size="16" style={{ fontSize: '16px' }}>Read more <i className="flaticon-send"></i></a></div>
             </div>
-          </div> */}
-          {/* div className="vas-block-one">
+          </div></div><div className="owl-item active" style={{ width: '204px', marginRight: '30px' }}><div className="vas-block-one centred">
             <div className="inner-box">
-              <div className="icon-box"><img src="/assets/images/img-prime-time-service.jpg" alt="" />
-                <!--<img src="/assets/images/icon-prime-time.png" alt="" />-- >
+              <div className="icon-box"><img src="/assets/images/img-courier-delivery.jpg" alt="Courier Delivery" />
               </div>
-              <h3><a href="additional_services.php#prime_time">Prime Time Service</a></h3>
-              <div className="link"><a href="additional_services.php#prime_time">Read more <Send className="flaticon-send" /></a></div>
+              <h3 data-asw-org-font-size="15" style={{ fontSize: '15px' }}><a href="additional_services.php#courier" data-asw-org-font-size="15" style={{ fontSize: '15px' }}>Courier service</a></h3>
+              <div className="link"><a href="additional_services.php#courier" data-asw-org-font-size="16" style={{ fontSize: '16px' }}>Read more <i className="flaticon-send"></i></a></div>
             </div>
-          </div */}
-          {/* 
-						<div className="service-block-one">
-							<div className="inner-box">
-								<div className="icon-box"><img src="/assets/images/icon-card.png" alt="" /></div>
-								<h3><Link to="/additional_services.php">HDFC Forex Card</Link></h3>
-								<div className="link"><Link to="/additional_services.php">Read more <Send className="flaticon-send" /></Link></div>
-							</div>
-						</div>
-					 */}
-        </div>
+          </div></div><div className="owl-item active" style={{ width: '204px', marginRight: '30px' }}><div className="vas-block-one">
+            <div className="inner-box">
+              <div className="icon-box"><img src="/assets/images/sms-services.jpg" alt="SMS Service" /></div>
+              <h3 data-asw-org-font-size="15" style={{ fontSize: '15px' }}><a href="additional_services.php#sms" data-asw-org-font-size="15" style={{ fontSize: '15px' }}>SMS service</a></h3>
+              <div className="link"><a href="additional_services.php#sms" data-asw-org-font-size="16" style={{ fontSize: '16px' }}>Read more <i className="flaticon-send"></i></a></div>
+            </div>
+          </div></div><div className="owl-item active" style={{ width: '204px', marginRight: '30px' }}><div className="vas-block-one">
+            <div className="inner-box">
+              <div className="icon-box"><img src="/assets/images/on-demand-visa-service.jpg" alt="Premium Lounge" />
+              </div>
+              <h3 data-asw-org-font-size="15" style={{ fontSize: '15px' }}><a href="additional_services.php#premium_lounge" data-asw-org-font-size="15" style={{ fontSize: '15px' }}>Premium lounge</a></h3>
+              <div className="link"><a href="additional_services.php#premium_lounge" data-asw-org-font-size="16" style={{ fontSize: '16px' }}>Read more <i className="flaticon-send"></i></a></div>
+            </div>
+          </div></div><div className="owl-item cloned active" style={{ width: '204px', marginRight: '30px' }}><div className="vas-block-one centred">
+            <div className="inner-box">
+              <div className="icon-box"><img src="/assets/images/img-photocopy.jpg" alt="Photocopy" />
+              </div>
+              <h3 data-asw-org-font-size="15" style={{ fontSize: '15px' }}><a href="additional_services.php#courier" data-asw-org-font-size="15" style={{ fontSize: '15px' }}>Photocopy</a></h3>
+              <div className="link"><a href="additional_services.php#photocopy" data-asw-org-font-size="16" style={{ fontSize: '16px' }}>Read more <i className="flaticon-send"></i></a></div>
+            </div>
+          </div></div><div className="owl-item cloned active" style={{ width: '204px', marginRight: '30px' }}><div className="vas-block-one centred">
+            <div className="inner-box">
+              <div className="icon-box"><img src="/assets/images/img-photobooth.jpg" alt="Photograph" />
+              </div>
+              <h3 data-asw-org-font-size="15" style={{ fontSize: '15px' }}><a href="additional_services.php#photograph" data-asw-org-font-size="15" style={{ fontSize: '15px' }}>Photograph</a></h3>
+              <div className="link"><a href="additional_services.php#photograph" data-asw-org-font-size="16" style={{ fontSize: '16px' }}>Read more <i className="flaticon-send"></i></a></div>
+            </div>
+          </div></div><div className="owl-item cloned" style={{ width: '204px', marginRight: '30px' }}><div className="vas-block-one centred">
+            <div className="inner-box">
+              <div className="icon-box"><img src="/assets/images/img-courier-delivery.jpg" alt="Courier Delivery" />
+              </div>
+              <h3 data-asw-org-font-size="15" style={{ fontSize: '15px' }}><a href="additional_services.php#courier" data-asw-org-font-size="15" style={{ fontSize: '15px' }}>Courier service</a></h3>
+              <div className="link"><a href="additional_services.php#courier" data-asw-org-font-size="16" style={{ fontSize: '16px' }}>Read more <i className="flaticon-send"></i></a></div>
+            </div>
+          </div></div><div className="owl-item cloned" style={{ width: '204px', marginRight: '30px' }}><div className="vas-block-one">
+            <div className="inner-box">
+              <div className="icon-box"><img src="/assets/images/sms-services.jpg" alt="SMS Service" /></div>
+              <h3 data-asw-org-font-size="15" style={{ fontSize: '15px' }}><a href="additional_services.php#sms" data-asw-org-font-size="15" style={{ fontSize: '15px' }}>SMS service</a></h3>
+              <div className="link"><a href="additional_services.php#sms" data-asw-org-font-size="16" style={{ fontSize: '16px' }}>Read more <i className="flaticon-send"></i></a></div>
+            </div>
+          </div></div><div className="owl-item cloned" style={{ width: '204px', marginRight: '30px' }}><div className="vas-block-one">
+            <div className="inner-box">
+              <div className="icon-box"><img src="/assets/images/on-demand-visa-service.jpg" alt="Premium Lounge" />
+              </div>
+              <h3 data-asw-org-font-size="15" style={{ fontSize: '15px' }}><a href="additional_services.php#premium_lounge" data-asw-org-font-size="15" style={{ fontSize: '15px' }}>Premium lounge</a></h3>
+              <div className="link"><a href="additional_services.php#premium_lounge" data-asw-org-font-size="16" style={{ fontSize: '16px' }}>Read more <i className="flaticon-send"></i></a></div>
+            </div>
+          </div></div></div></div><div className="owl-nav disabled"><div className="owl-prev"><span className="fas fa-angle-left" data-asw-org-font-size="19" style={{ fontSize: '19px' }}></span></div><div className="owl-next"><span className="fas fa-angle-right" data-asw-org-font-size="19" style={{ fontSize: '19px' }}></span></div></div><div className="owl-dots disabled"><div className="owl-dot active"><span data-asw-org-font-size="13" style={{ fontSize: '13px' }}></span></div></div></div>
       </div>
     </section>
     </>

@@ -34,6 +34,10 @@ const Login = () => {
       const data = await response.json();
 
       if (response.ok) {
+        if (data.user.role === 'user') {
+          setError('Access denied. Only admin and employee are allowed to login.');
+          return;
+        }
         localStorage.setItem('token', data.token);
         localStorage.setItem('role', data.user.role);
         navigate('/dashboard');

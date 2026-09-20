@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Sidebar from '../components/dashboard/Sidebar';
 import VisaManagement from '../components/dashboard/VisaManagement';
-import UserManagement from '../components/dashboard/UserManagement';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -12,7 +11,7 @@ const Dashboard = () => {
     const token = localStorage.getItem('token');
     const storedRole = localStorage.getItem('role');
     
-    if (!token) {
+    if (!token || storedRole === 'user') {
       navigate('/app_india/login');
     } else if (storedRole) {
       setRole(storedRole);
@@ -61,7 +60,6 @@ const Dashboard = () => {
         <main style={{ flex: 1, overflowY: 'auto' }}>
           <Routes>
             <Route path="/" element={<VisaManagement />} />
-            <Route path="/users" element={<UserManagement role={role} />} />
             <Route path="/settings" element={<div style={{ padding: '20px' }}><h2>Settings</h2><p>Dashboard configuration will go here.</p></div>} />
           </Routes>
         </main>

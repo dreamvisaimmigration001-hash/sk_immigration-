@@ -14,7 +14,7 @@ const ContactUs = () => {
 
   return (
     <>
-      <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto', textAlign: 'left' }}>
+      {/* <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto', textAlign: 'left' }}>
         {submitted ? (
           <div className="alert alert-success">Thank you for your message. We will get back to you shortly.</div>
         ) : (
@@ -38,185 +38,185 @@ const ContactUs = () => {
             <button type="submit" className="theme-btn style-four">Submit</button>
           </form>
         )}
-      </div>
-<section className="page-title" style={{ backgroundImage: 'url(/assets/images/background/page-title.jpg)',  }}>
-			<div className="auto-container">
-				<div className="content-box">
-					<div className="title-box">
-						<h1>Contact us</h1>
-						<div className="dotted-box">
-							<span className="dotted"></span>
-							<span className="dotted"></span>
-							<span className="dotted"></span>
-						</div>
-					</div>
-					<ul className="bread-crumb clearfix">
-						<li><Link to="/index.php">Home</Link></li>
-						<li>Contact us</li>
-					</ul>
-				</div>
-			</div>
-		</section><section className="service-style-two service-page-1 bg-color-3">
-    <div className="auto-container">
-      <div className="sec-title centred mb-2">
-        <h2>Contact us</h2>
-        <div className="dotted-box">
-          <span className="dotted"></span>
-          <span className="dotted"></span>
-          <span className="dotted"></span>
-        </div>
-      </div>
-	  {/* p className="mb-2" align="center">For any queries, kindly contact us on our call center. You can also contact us by e-mail at</p */}
-      <div className=" centred mb-1">
-        {/* <p>Delhi: 0120 – 6917510, Mumbai: 0120 – 6917520 You can also contact us by e-mail at Delhi: info.del@blshelpline.com, Mumbai: info.bom@blshelpline.com. E-mail queries are responded Monday to Friday, within 2 working days.</p> */}
-      </div>
-      <div className="row clearfix">
-        
-       <div className="col-lg-6 col-md-6 col-sm-12 service-block">
-          <div className="service-block-two">
-            <div className="inner-box">
-              <div className="lower-content">
-                <div className="box">
-                  <h3>Slovakia Visa Application center – Delhi</h3>
-				          <p className="text-left"><b>Address: </b>Upper Ground Floor, <br />
-                  Dr. Gopaldas Bhawan 28, <br />
-                  Barakhamba Road, New Delhi – 110001</p>
-				          <p className="text-left"><strong>Contact Number:&nbsp;</strong>0120-6917550</p>
-                  <p className="text-left"><strong>Email:</strong> <a href="mailto:info.slovakiaind@blshelpline.com">info.slovakiaind@blshelpline.com</a> <a href="mailto:feedback.slovakiaind@blshelpline.com">feedback.slovakiaind@blshelpline.com</a></p>
-				          <p className="text-left"><strong>Submission Time Normal -</strong> 09:00 to 14:00 hrs (Monday to Friday, Except Consular/National Holidays)</p>
-                  <p className="text-left"><strong>Prime Time –</strong> 14:00 to 16:00 hrs (Monday to Friday)</p>
-				          <p className="text-left"><strong>Passport Collection Time :</strong> 16:00 to 17:00 hrs  (Monday to Friday)</p><br />
-				          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d875.4312744649765!2d77.21039014362196!3d28.638000082438584!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd443a53a3c1%3A0x1378086bb617931f!2sBLS%20International%20Spain%20Visa%20Application%20Center!5e0!3m2!1sen!2sin!4v1697520291990!5m2!1sen!2sin" width="100%" height="250" style={{ border: '0',  }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+      </div> */}
+      <section className="page-title" style={{ backgroundImage: 'url(/assets/images/background/page-title.jpg)', }}>
+        <div className="auto-container">
+          <div className="content-box">
+            <div className="title-box">
+              <h1>Contact us</h1>
+              <div className="dotted-box">
+                <span className="dotted"></span>
+                <span className="dotted"></span>
+                <span className="dotted"></span>
               </div>
-              <figure className="image-box"></figure>
             </div>
+            <ul className="bread-crumb clearfix">
+              <li><Link to="/index.php">Home</Link></li>
+              <li>Contact us</li>
+            </ul>
           </div>
         </div>
-        <div className="col-lg-6 col-md-6 col-sm-12 service-block">
-          <div className="service-block-two">
-            <div className="inner-box">
-              <div className="lower-content">
-                <div className="box">
-                  <h3>Slovakia Visa Application center – Bengaluru</h3>
-				          <p className="text-left"><b>Address: </b>Smartworks Golden Millenium, <br />
-                  69/1, Ground floor, <br />
-                  Millers Rd. Bengaluru - 560052</p>
-				          <p className="text-left"><strong>Contact Number:&nbsp;</strong>0120-6917550{/* 012069175550 */}</p>
-                  <p className="text-left"><strong>Email:</strong> <a href="mailto:info.slovakiaind@blshelpline.com">info.slovakiaind@blshelpline.com</a> <a href="mailto:feedback.slovakiaind@blshelpline.com">feedback.slovakiaind@blshelpline.com</a></p>
-				          <p className="text-left"><strong>Submission Time Normal -</strong> 09:00 to 14:00 hrs (Monday to Friday, Except Consular/National Holidays)</p>
-                  <p className="text-left"><strong>Prime Time –</strong> 14:00 to 16:00 hrs (Monday to Friday)</p>
-				          <p className="text-left"><strong>Passport Collection Time :</strong> 16:00 to 17:00 hrs  (Monday to Friday)</p><br />
-				          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3887.7042253617237!2d77.5911939!3d12.99076!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1642f33db5cd%3A0xac30c6dc93405221!2sSmartworks%20Golden%20Millenium!5e0!3m2!1sen!2sin!4v1694782137716!5m2!1sen!2sin" width="100%" height="250" style={{ border: '0',  }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-              </div>
-              <figure className="image-box"></figure>
+      </section><section className="service-style-two service-page-1 bg-color-3">
+        <div className="auto-container">
+          <div className="sec-title centred mb-2">
+            <h2>Contact us</h2>
+            <div className="dotted-box">
+              <span className="dotted"></span>
+              <span className="dotted"></span>
+              <span className="dotted"></span>
             </div>
           </div>
-        </div>
-        <div className="col-lg-6 col-md-6 col-sm-12 service-block">
-          <div className="service-block-two">
-            <div className="inner-box">
-              <div className="lower-content">
-                <div className="box">
-                  <h3>Slovakia Visa Application center – Mumbai</h3>
-                  <p className="text-left"><b>Address: </b>
-                  Unit No G1 &amp; G8,Dalamal Towers,<br />
-                  Ground Floor,Free Press Journal Marg<br />
-                  Nariman Point – Mumbai, Pin Code: 400021</p>
-				          <p className="text-left"><strong>Contact Number:&nbsp;</strong>0120-6917550</p>
-                  <p className="text-left"><strong>Email:</strong> <a href="mailto:info.slovakiaind@blshelpline.com">info.slovakiaind@blshelpline.com</a> <a href="mailto:feedback.slovakiaind@blshelpline.com">feedback.slovakiaind@blshelpline.com</a></p>
-				          <p className="text-left"><strong>Submission Time Normal -</strong> 09:00 to 14:00 hrs (Monday to Friday, Except Consular/National Holidays)</p>
-                  <p className="text-left"><strong>Prime Time –</strong> 14:00 to 16:00 hrs (Monday to Friday)</p>
-				          <p className="text-left"><strong>Passport Collection Time :</strong> 16:00 to 17:00 hrs  (Monday to Friday)</p>
-                <br /><br />
-				        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3774.150803331462!2d72.8229585!3d18.924718!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1ebd76e1bbb%3A0x788297697058e022!2sDalamal%20Tower%2C%20Free%20Press%20Journal%20Marg%2C%20Nariman%20Point%2C%20Mumbai%2C%20Maharashtra%20400021!5e0!3m2!1sen!2sin!4v1635591964701!5m2!1sen!2sin" width="100%" height="250" style={{ border: '0',  }} allowfullscreen="" loading="lazy"></iframe>
+          {/* p className="mb-2" align="center">For any queries, kindly contact us on our call center. You can also contact us by e-mail at</p */}
+          <div className=" centred mb-1">
+            {/* <p>Delhi: 0120 – 6917510, Mumbai: 0120 – 6917520 You can also contact us by e-mail at Delhi: info.del@blshelpline.com, Mumbai: info.bom@blshelpline.com. E-mail queries are responded Monday to Friday, within 2 working days.</p> */}
+          </div>
+          <div className="row clearfix">
+
+            <div className="col-lg-6 col-md-6 col-sm-12 service-block">
+              <div className="service-block-two">
+                <div className="inner-box">
+                  <div className="lower-content">
+                    <div className="box">
+                      <h3>Slovakia Visa Application center – Delhi</h3>
+                      <p className="text-left"><b>Address: </b>Upper Ground Floor, <br />
+                        Dr. Gopaldas Bhawan 28, <br />
+                        Barakhamba Road, New Delhi – 110001</p>
+                      <p className="text-left"><strong>Contact Number:&nbsp;</strong>0120-6917550</p>
+                      <p className="text-left"><strong>Email:</strong> <a href="mailto:info.slovakiaind@blshelpline.com">info.slovakiaind@blshelpline.com</a> <a href="mailto:feedback.slovakiaind@blshelpline.com">feedback.slovakiaind@blshelpline.com</a></p>
+                      <p className="text-left"><strong>Submission Time Normal -</strong> 09:00 to 14:00 hrs (Monday to Friday, Except Consular/National Holidays)</p>
+                      <p className="text-left"><strong>Prime Time –</strong> 14:00 to 16:00 hrs (Monday to Friday)</p>
+                      <p className="text-left"><strong>Passport Collection Time :</strong> 16:00 to 17:00 hrs  (Monday to Friday)</p><br />
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d875.4312744649765!2d77.21039014362196!3d28.638000082438584!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd443a53a3c1%3A0x1378086bb617931f!2sBLS%20International%20Spain%20Visa%20Application%20Center!5e0!3m2!1sen!2sin!4v1697520291990!5m2!1sen!2sin" width="100%" height="250" style={{ border: '0', }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                  </div>
+                  <figure className="image-box"></figure>
                 </div>
               </div>
-              <figure className="image-box"></figure>
             </div>
-          </div>
-        </div>
+            <div className="col-lg-6 col-md-6 col-sm-12 service-block">
+              <div className="service-block-two">
+                <div className="inner-box">
+                  <div className="lower-content">
+                    <div className="box">
+                      <h3>Slovakia Visa Application center – Bengaluru</h3>
+                      <p className="text-left"><b>Address: </b>Smartworks Golden Millenium, <br />
+                        69/1, Ground floor, <br />
+                        Millers Rd. Bengaluru - 560052</p>
+                      <p className="text-left"><strong>Contact Number:&nbsp;</strong>0120-6917550{/* 012069175550 */}</p>
+                      <p className="text-left"><strong>Email:</strong> <a href="mailto:info.slovakiaind@blshelpline.com">info.slovakiaind@blshelpline.com</a> <a href="mailto:feedback.slovakiaind@blshelpline.com">feedback.slovakiaind@blshelpline.com</a></p>
+                      <p className="text-left"><strong>Submission Time Normal -</strong> 09:00 to 14:00 hrs (Monday to Friday, Except Consular/National Holidays)</p>
+                      <p className="text-left"><strong>Prime Time –</strong> 14:00 to 16:00 hrs (Monday to Friday)</p>
+                      <p className="text-left"><strong>Passport Collection Time :</strong> 16:00 to 17:00 hrs  (Monday to Friday)</p><br />
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3887.7042253617237!2d77.5911939!3d12.99076!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1642f33db5cd%3A0xac30c6dc93405221!2sSmartworks%20Golden%20Millenium!5e0!3m2!1sen!2sin!4v1694782137716!5m2!1sen!2sin" width="100%" height="250" style={{ border: '0', }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                  </div>
+                  <figure className="image-box"></figure>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6 col-md-6 col-sm-12 service-block">
+              <div className="service-block-two">
+                <div className="inner-box">
+                  <div className="lower-content">
+                    <div className="box">
+                      <h3>Slovakia Visa Application center – Mumbai</h3>
+                      <p className="text-left"><b>Address: </b>
+                        Unit No G1 &amp; G8,Dalamal Towers,<br />
+                        Ground Floor,Free Press Journal Marg<br />
+                        Nariman Point – Mumbai, Pin Code: 400021</p>
+                      <p className="text-left"><strong>Contact Number:&nbsp;</strong>0120-6917550</p>
+                      <p className="text-left"><strong>Email:</strong> <a href="mailto:info.slovakiaind@blshelpline.com">info.slovakiaind@blshelpline.com</a> <a href="mailto:feedback.slovakiaind@blshelpline.com">feedback.slovakiaind@blshelpline.com</a></p>
+                      <p className="text-left"><strong>Submission Time Normal -</strong> 09:00 to 14:00 hrs (Monday to Friday, Except Consular/National Holidays)</p>
+                      <p className="text-left"><strong>Prime Time –</strong> 14:00 to 16:00 hrs (Monday to Friday)</p>
+                      <p className="text-left"><strong>Passport Collection Time :</strong> 16:00 to 17:00 hrs  (Monday to Friday)</p>
+                      <br /><br />
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3774.150803331462!2d72.8229585!3d18.924718!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1ebd76e1bbb%3A0x788297697058e022!2sDalamal%20Tower%2C%20Free%20Press%20Journal%20Marg%2C%20Nariman%20Point%2C%20Mumbai%2C%20Maharashtra%20400021!5e0!3m2!1sen!2sin!4v1635591964701!5m2!1sen!2sin" width="100%" height="250" style={{ border: '0', }} allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                  </div>
+                  <figure className="image-box"></figure>
+                </div>
+              </div>
+            </div>
 
 
 
-        <div className="col-lg-6 col-md-6 col-sm-12 service-block">
-          <div className="service-block-two">
-            <div className="inner-box">
-              <div className="lower-content">
-                <div className="box">
-                  <h3>Slovakia Visa Application center – India (Kolkata)</h3>
-                  <p className="text-left"><b>Address: </b>BLS International Services Ltd,<br />
-                  S-201, South Block, Second Floor,<br />
-				          11/1, Ideal Plaza, Sarat Bose Road,<br />
-				          Kolkata - 700020(INDIA)</p>
-                  <p className="text-left"><strong>Contact Number:&nbsp;</strong>0120-6917550</p>
-                  <p className="text-left"><strong>Email:</strong> <a href="mailto:info.slovakiaind@blshelpline.com">info.slovakiaind@blshelpline.com</a> <a href="mailto:feedback.slovakiaind@blshelpline.com">feedback.slovakiaind@blshelpline.com</a></p>
-                  <p className="text-left"><strong>Submission hours :</strong> 09:00 to 14:00 hrs (Monday to Friday, Except Consular/National Holidays)</p>
-				          <p className="text-left"><b>Prime Time – </b>14:00 to 16:00 hrs (Monday to Friday)</p>
-								<p className="text-left"><b>Passport Collection Timing :</b> 16:00 to 17:00 hrs (Monday to Friday)</p>
-								<br /><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24605.528570273378!2d88.31818981083983!3d22.5389994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277af655f8a17%3A0xdf802f2dc24384aa!2sBLS%20Spain%20Visa%20Application%20Centre%20in%20Kolkata!5e1!3m2!1sen!2sin!4v1768455105877!5m2!1sen!2sin" width="100%" height="250" style={{ border: '0',  }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div className="col-lg-6 col-md-6 col-sm-12 service-block">
+              <div className="service-block-two">
+                <div className="inner-box">
+                  <div className="lower-content">
+                    <div className="box">
+                      <h3>Slovakia Visa Application center – India (Kolkata)</h3>
+                      <p className="text-left"><b>Address: </b>BLS International Services Ltd,<br />
+                        S-201, South Block, Second Floor,<br />
+                        11/1, Ideal Plaza, Sarat Bose Road,<br />
+                        Kolkata - 700020(INDIA)</p>
+                      <p className="text-left"><strong>Contact Number:&nbsp;</strong>0120-6917550</p>
+                      <p className="text-left"><strong>Email:</strong> <a href="mailto:info.slovakiaind@blshelpline.com">info.slovakiaind@blshelpline.com</a> <a href="mailto:feedback.slovakiaind@blshelpline.com">feedback.slovakiaind@blshelpline.com</a></p>
+                      <p className="text-left"><strong>Submission hours :</strong> 09:00 to 14:00 hrs (Monday to Friday, Except Consular/National Holidays)</p>
+                      <p className="text-left"><b>Prime Time – </b>14:00 to 16:00 hrs (Monday to Friday)</p>
+                      <p className="text-left"><b>Passport Collection Timing :</b> 16:00 to 17:00 hrs (Monday to Friday)</p>
+                      <br /><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24605.528570273378!2d88.31818981083983!3d22.5389994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277af655f8a17%3A0xdf802f2dc24384aa!2sBLS%20Spain%20Visa%20Application%20Centre%20in%20Kolkata!5e1!3m2!1sen!2sin!4v1768455105877!5m2!1sen!2sin" width="100%" height="250" style={{ border: '0', }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                  </div>
+                  <figure className="image-box"></figure>
                 </div>
               </div>
-              <figure className="image-box"></figure>
             </div>
-          </div>
-        </div>
-        <div className="col-lg-6 col-md-6 col-sm-12 service-block">
-          <div className="service-block-two">
-            <div className="inner-box">
-              <div className="lower-content">
-                <div className="box">
-                  <h3>Slovakia Visa Application center – India (Chennai)</h3>
-								<p className="text-left"><b>Address: </b>
-								BLS International ,<br />
-								03rd floor, Olympia National Tower,<br />
-								A3 &amp; A4, North, Guindy Industrial Estate,<br />
-								SIDCO Industrial Estate, Guindy, Chennai,<br />
-								Tamil Nadu 600032
-								{/* BLS International Services Ltd,</br>
+            <div className="col-lg-6 col-md-6 col-sm-12 service-block">
+              <div className="service-block-two">
+                <div className="inner-box">
+                  <div className="lower-content">
+                    <div className="box">
+                      <h3>Slovakia Visa Application center – India (Chennai)</h3>
+                      <p className="text-left"><b>Address: </b>
+                        BLS International ,<br />
+                        03rd floor, Olympia National Tower,<br />
+                        A3 &amp; A4, North, Guindy Industrial Estate,<br />
+                        SIDCO Industrial Estate, Guindy, Chennai,<br />
+                        Tamil Nadu 600032
+                        {/* BLS International Services Ltd,</br>
 								DBS Business Center, DBS House, 2nd floor,</br>
 								Office Suite - 214, 31-A Cathedral Garden Road,</br>
 								Nungambakkam, Chennai – 600034. */}</p>
-								<p className="text-left"><b>Email:</b> <a href="mailto:info.slovakiaind@blshelpline.com">info.slovakiaind@blshelpline.com</a><br />
-                                <a href="mailto:feedback.slovakiaind@blshelpline.com">feedback.slovakiaind@blshelpline.com</a></p>
-								<p className="text-left"><b>Phone Number:</b> 0120-6917550</p>
-								<p className="text-left"><b>Submission Time Normal - </b>09:00 to 14:00 hrs (Monday to Friday, Except Consular/National Holidays)</p>
-								<p className="text-left"><b>Prime Time – </b>14:00 to 16:00 hrs (Monday to Friday)</p>
-								<p className="text-left"><b>Passport Collection Timing :</b> 16:00 to 17:00 hrs (Monday to Friday)</p>
-								<br /><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d32735.77997218431!2d80.21358402024434!3d13.040432936994113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52641cccd1b1ef%3A0xdcb821f352dff629!2sBLS%20Spain%20Visa%20Application%20Centre!5e0!3m2!1sen!2sin!4v1718364874408!5m2!1sen!2sin" width="100%" height="250" style={{ border: '0',  }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                      <p className="text-left"><b>Email:</b> <a href="mailto:info.slovakiaind@blshelpline.com">info.slovakiaind@blshelpline.com</a><br />
+                        <a href="mailto:feedback.slovakiaind@blshelpline.com">feedback.slovakiaind@blshelpline.com</a></p>
+                      <p className="text-left"><b>Phone Number:</b> 0120-6917550</p>
+                      <p className="text-left"><b>Submission Time Normal - </b>09:00 to 14:00 hrs (Monday to Friday, Except Consular/National Holidays)</p>
+                      <p className="text-left"><b>Prime Time – </b>14:00 to 16:00 hrs (Monday to Friday)</p>
+                      <p className="text-left"><b>Passport Collection Timing :</b> 16:00 to 17:00 hrs (Monday to Friday)</p>
+                      <br /><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d32735.77997218431!2d80.21358402024434!3d13.040432936994113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52641cccd1b1ef%3A0xdcb821f352dff629!2sBLS%20Spain%20Visa%20Application%20Centre!5e0!3m2!1sen!2sin!4v1718364874408!5m2!1sen!2sin" width="100%" height="250" style={{ border: '0', }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                  </div>
+                  <figure className="image-box"></figure>
                 </div>
               </div>
-              <figure className="image-box"></figure>
             </div>
-          </div>
-        </div>
-        <div className="col-lg-6 col-md-6 col-sm-12 service-block">
-          <div className="service-block-two">
-            <div className="inner-box">
-              <div className="lower-content">
-                <div className="box">
-                  <h3>Slovakia Visa Application center – Nepal (Kathmandu)</h3>
-								<p className="text-left"><b>Address: </b>
-								BLS International Services Ltd,<br />
-								No. 344/9, Dashrath Chand Marg,<br />
-								Baluwatar,Kathmandu, Nepal.<br />
-								PO Box: 5657</p>
-								<p className="text-left"><b>Email:</b> <a href="mailto:info.slovakiainktm@blshelpline.com">info.slovakiainktm@blshelpline.com</a><br />
-                                <a href="mailto:feedback.slovakiainktm@blshelpline.com">feedback.slovakiainktm@blshelpline.com</a></p>
-								<p className="text-left"><b>Phone Number:</b> 0120-6917550</p>
-								<p className="text-left"><b>Submission Timing Normal - </b> 09:00 to 14:00 hrs </p>
-								<p className="text-left"><b>Prime Time –</b> 14:30 to 15:30 hrs</p>
-								<p className="text-left"><b>Passport Collection Timing :</b> 16:00 to 17:00 hrs (Monday to Friday, Except Consular/National Holidays)</p>
-								<br /><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.7902096024272!2d85.32869997488483!3d27.723762972126853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb196cb2f70db5%3A0xee4dec4ed63abe4e!2sBLS%20International!5e0!3m2!1sen!2sin!4v1718365480810!5m2!1sen!2sin" width="100%" height="250" style={{ border: '0',  }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div className="col-lg-6 col-md-6 col-sm-12 service-block">
+              <div className="service-block-two">
+                <div className="inner-box">
+                  <div className="lower-content">
+                    <div className="box">
+                      <h3>Slovakia Visa Application center – Nepal (Kathmandu)</h3>
+                      <p className="text-left"><b>Address: </b>
+                        BLS International Services Ltd,<br />
+                        No. 344/9, Dashrath Chand Marg,<br />
+                        Baluwatar,Kathmandu, Nepal.<br />
+                        PO Box: 5657</p>
+                      <p className="text-left"><b>Email:</b> <a href="mailto:info.slovakiainktm@blshelpline.com">info.slovakiainktm@blshelpline.com</a><br />
+                        <a href="mailto:feedback.slovakiainktm@blshelpline.com">feedback.slovakiainktm@blshelpline.com</a></p>
+                      <p className="text-left"><b>Phone Number:</b> 0120-6917550</p>
+                      <p className="text-left"><b>Submission Timing Normal - </b> 09:00 to 14:00 hrs </p>
+                      <p className="text-left"><b>Prime Time –</b> 14:30 to 15:30 hrs</p>
+                      <p className="text-left"><b>Passport Collection Timing :</b> 16:00 to 17:00 hrs (Monday to Friday, Except Consular/National Holidays)</p>
+                      <br /><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.7902096024272!2d85.32869997488483!3d27.723762972126853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb196cb2f70db5%3A0xee4dec4ed63abe4e!2sBLS%20International!5e0!3m2!1sen!2sin!4v1718365480810!5m2!1sen!2sin" width="100%" height="250" style={{ border: '0', }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                  </div>
+                  <figure className="image-box"></figure>
                 </div>
               </div>
-              <figure className="image-box"></figure>
             </div>
-          </div>
-        </div>
 
-        {/* div className="col-lg-6 col-md-6 col-sm-12 service-block">
+            {/* div className="col-lg-6 col-md-6 col-sm-12 service-block">
           <div className="service-block-two">
             <div className="inner-box">
               <div className="lower-content">
@@ -458,12 +458,12 @@ const ContactUs = () => {
             </div>
           </div>
         </div */}
-		
-      </div>
-    </div>
-  </section><button className="scroll-top scroll-to-target open" data-target="html" aria-label="Scroll to top">
-  <ArrowUp className="fas fa-long-arrow-alt-up" />
-</button>
+
+          </div>
+        </div>
+      </section><button className="scroll-top scroll-to-target open" data-target="html" aria-label="Scroll to top">
+        <ArrowUp className="fas fa-long-arrow-alt-up" />
+      </button>
     </>
   );
 };

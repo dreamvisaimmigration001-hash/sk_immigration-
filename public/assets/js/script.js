@@ -7,11 +7,13 @@
 		if($('.loader-wrap').length){
 			$('.loader-wrap').delay(1000).fadeOut(500);
 		}
-		TweenMax.to($(".loader-wrap .overlay"), 1.2, {
-            force3D: true,
-            left: "100%",
-            ease: Expo.easeInOut,
-        });
+		if (typeof TweenMax !== 'undefined') {
+			TweenMax.to($(".loader-wrap .overlay"), 1.2, {
+				force3D: true,
+				left: "100%",
+				ease: Expo.easeInOut,
+			});
+		}
 	}
 	if ($(".preloader-close").length) {
         $(".preloader-close").on("click", function(){
@@ -392,7 +394,9 @@
 			});
 	  	};
 	}	$(document).ready(function() {
-      $('select:not(.ignore)').niceSelect();
+      if ($.fn.niceSelect) {
+        $('select:not(.ignore)').niceSelect();
+      }
     });		/*	=========================================================================
 	When document is Scrollig, do
 	========================================================================== */

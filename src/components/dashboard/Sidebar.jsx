@@ -11,15 +11,7 @@ const Sidebar = ({ role = "admin", onLogout }) => {
       icon: <FileText size={20} />,
       path: "/dashboard",
     },
-    ...(role === "admin"
-      ? [
-          {
-            name: "User Management",
-            icon: <Users size={20} />,
-            path: "/dashboard/users",
-          },
-        ]
-      : []),
+
     {
       name: "Settings",
       icon: <Settings size={20} />,
@@ -64,7 +56,7 @@ const Sidebar = ({ role = "admin", onLogout }) => {
         >
           {navItems.map((item) => {
             const isActive =
-              location.patjhname === item.path ||
+              location.pathname === item.path ||
               (item.path !== "/dashboard" &&
                 location.pathname.startsWith(item.path));
             return (
