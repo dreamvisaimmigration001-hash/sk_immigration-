@@ -78,25 +78,12 @@ const TrackApplication = () => {
                     <div className="sidebar-widget sidebar-assessment bg-white border">
                       <div className="widget-content">
                             <form onSubmit={handleTrack} className="assessment-form">
-                              <div className="form-group mb-3">
-                                <label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>Search By:</label>
-                                <select 
-                                  className="border form-control" 
-                                  value={searchType} 
-                                  onChange={(e) => setSearchType(e.target.value)}
-                                  style={{ height: '50px', padding: '10px', width: '100%' }}
-                                >
-                                  <option value="passport">Passport Number</option>
-                                  <option value="visaGrantNumber">Visa Grant Number</option>
-                                  <option value="trn">TRN</option>
-                                </select>
-                              </div>
                               <div className="form-group mb-4">
-                                <label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>Reference Number:</label>
+                                <label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>Passport Number:</label>
                                 <input 
                                   type="text" 
                                   className="border form-control" 
-                                  placeholder="Enter your reference no" 
+                                  placeholder="Enter your passport number" 
                                   required 
                                   value={referenceNumber}
                                   onChange={(e) => setReferenceNumber(e.target.value)}
@@ -122,6 +109,8 @@ const TrackApplication = () => {
                                 <h5 style={{ marginTop: 0, marginBottom: '15px', borderBottom: '1px solid #c3e6cb', paddingBottom: '10px' }}>Application Found!</h5>
                                 <p style={{ margin: '5px 0' }}><strong>Status:</strong> {result.visaStatus || 'N/A'}</p>
                                 <p style={{ margin: '5px 0' }}><strong>Applicant Name:</strong> {result.givenNames} {result.familyName}</p>
+                                <p style={{ margin: '5px 0' }}><strong>Nationality:</strong> {result.nationality || 'N/A'}</p>
+                                <p style={{ margin: '5px 0' }}><strong>Date of Birth:</strong> {result.dateOfBirth ? new Date(result.dateOfBirth).toLocaleDateString() : 'N/A'}</p>
                                 <p style={{ margin: '5px 0' }}><strong>Visa Type:</strong> {result.visaType || result.applicationType || 'N/A'}</p>
                                 <p style={{ margin: '5px 0' }}><strong>Latest Update:</strong> {result.latestUpdate?.content || 'No recent updates'}</p>
                                 
