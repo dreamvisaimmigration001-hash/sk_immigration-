@@ -110,7 +110,7 @@ const TrackApplication = () => {
                                 <p style={{ margin: '5px 0' }}><strong>Status:</strong> {result.visaStatus || 'N/A'}</p>
                                 <p style={{ margin: '5px 0' }}><strong>Applicant Name:</strong> {result.givenNames} {result.familyName}</p>
                                 <p style={{ margin: '5px 0' }}><strong>Nationality:</strong> {result.nationality || 'N/A'}</p>
-                                <p style={{ margin: '5px 0' }}><strong>Date of Birth:</strong> {result.dateOfBirth ? new Date(result.dateOfBirth).toLocaleDateString() : 'N/A'}</p>
+                                <p style={{ margin: '5px 0' }}><strong>Date of Birth:</strong> {result.dateOfBirth ? new Date(result.dateOfBirth).toLocaleDateString('en-GB') : 'N/A'}</p>
                                 <p style={{ margin: '5px 0' }}><strong>Visa Type:</strong> {result.visaType || result.applicationType || 'N/A'}</p>
                                 <p style={{ margin: '5px 0' }}><strong>Latest Update:</strong> {result.latestUpdate?.content || 'No recent updates'}</p>
                                 
