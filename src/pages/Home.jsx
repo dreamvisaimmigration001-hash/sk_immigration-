@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
 <section className="banner-section style-two">
-			<div className="banner-carousel owl-theme owl-carousel owl-dots-none">
+			<div className="banner-carousel owl-theme owl-dots-none">
 				<div className="slide-item">
 					<div className="image-layer" style={{ backgroundImage: 'url(/assets/images/banner.jpg)', marginTop: '100px',  }}></div>
 					<div className="auto-container">

@@ -20,6 +20,14 @@ const Header = () => {
 			$('.mobile-menu .menu-backdrop, .mobile-menu .close-btn').off('click').on('click', function () {
 				$('body').removeClass('mobile-menu-visible');
 			});
+			
+			// Close mobile menu when a navigation link is clicked
+			$('.mobile-menu a').off('click').on('click', function () {
+				// Prevent closing if the link is just a dropdown toggler (e.g., href="#")
+				if ($(this).attr('href') !== '#') {
+					$('body').removeClass('mobile-menu-visible');
+				}
+			});
 		}
 	}, []);
 
