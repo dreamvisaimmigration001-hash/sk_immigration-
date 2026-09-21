@@ -197,6 +197,7 @@ const VisaManagement = () => {
                 <select name="applicationType" value={formData.applicationType} onChange={handleInputChange} style={{ width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: '4px' }}>
                   <option value="schengen">Schengen Visa (Short Term)</option>
                   <option value="national">National Visa (Long Term)</option>
+                  <option value="work_permit">Work Permit</option>
                   <option value="visa">Other Visa</option>
                 </select>
               </div>
